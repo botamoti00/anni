@@ -1,0 +1,414 @@
+@charset "utf-8";
+/*初期化*/
+.wrap {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 14px;
+    font-family: 'Baloo Chettan 2', cursive;
+    position: relative; /*scrollspy*/
+}
+
+h1,h2,h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+img {
+    vertical-align: bottom;
+}
+.animated {
+    opacity: 0;
+}
+/*ナビバーのアニメーション*/
+.scroll {
+    background-color: rgba(0,0,0,0.7);
+    transition: .3s;
+}
+.NoScroll {
+    transition: .3s;
+}
+/*ハンバーガーメニュー*/
+.navbar-dark .navbar-toggler {
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image:none; /* この行で背景画像を無効化 */
+  background-color: #fff;
+  width: 25px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: ease .5s;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image:none; /* この行で背景画像を無効化 */
+  background-color: #fff;
+  width: 30px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: ease .5s;
+}
+
+/* 3本のバーそれぞれの座標を設定 */
+.navbar-toggler-icon:nth-of-type(1) {top:7px;}
+.navbar-toggler-icon:nth-of-type(2) {top:14px;}
+.navbar-toggler-icon:nth-of-type(3) {top:21px;}
+
+/* メニューが開いている時の　3本のバーそれぞれの座標および角度を設定 */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-of-type(1) {
+top:13px;
+transform: rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-of-type(2) {
+opacity: 0;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-of-type(3) {
+top:13px;
+transform: rotate(-45deg);
+}
+/*トップ画像*/
+
+.top-image {
+    position: relative;
+    margin: 0;
+    height: 800px;
+    background-image: url("../img/main.jpg");
+    -webkit-background-size: cover;
+    -webkit-background-attachment: fixed; 
+}
+.top-image h1 {
+    position: absolute;
+    color: #fff;
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 15vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 30px;
+}
+/*画面幅によって、フォントサイズの変更*/
+@media (min-width: 760px){
+    .top-image h1 {
+         font-size: 10vw;   
+    }
+}
+@media (min-width: 1200px){
+    .top-image h1 {
+         font-size: 7vw;   
+    }
+}
+/*profileエリア*/
+#profile {
+    background-color: #99ccdd;
+    margin:  0;
+    padding: 20px 10px 30px 10px;
+}
+/*見出しデザイン*/
+#profile h2 {
+    border-left: 5px solid #fff;
+    padding-left: 5px;
+    color: #fff;
+}
+#profile h3 {
+    color: #fff;
+    padding-top: 10px;
+}
+/*プロフ画像*/
+.profile-img {
+    text-align: center;
+}
+
+.profile-img img {
+    border-radius: 150px;
+    border: 2px dotted #fff;
+    margin-bottom: 10px;
+}
+/*プロフィール内容*/
+#profile p {
+    padding: 10px;
+    line-height: 150%;
+    font-size: 20px;
+    font-family: 'Kosugi', sans-serif;
+}
+.links {
+    text-align: center;
+}
+.links p {
+    font-size: 8px;
+}
+.twitter-ico {
+    color: #fff;
+}
+
+.twitter {
+    margin-right: 10px;
+}
+
+@media (min-width: 760px){
+    #profile {
+        text-align: center; 
+    }
+    #profile h2 {
+        border: none;
+        font-size: 50px;
+    }
+}
+/*myskillエリア*/
+#skill {
+    margin: 0;
+    padding: 20px 10px 30px 10px;
+    width: 100%;
+    height: 400px;
+}
+/*見出しデザイン*/
+#skill h2 {
+    border-left: 5px solid #333;
+    padding-left: 5px;
+}
+#skill p {
+    font-size: 20px;
+    font-family: 'Kosugi', sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+.myskill {
+    display: flex;
+}
+.myskill div {
+    margin: 0 10px;
+}
+.skill-ico {
+    color: #113332;
+}
+.star {
+    font-size: 20px;
+}
+
+@media (min-width: 760px){
+    #skill {
+         text-align: center;   
+    }
+    #skill h2 {
+        border: none;
+        font-size: 50px;
+    }
+    .myskill {
+        width: 500px;
+        margin: auto;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+@media (max-width: 480px){
+    .myskill {
+        width: 300px;
+        margin: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .myskill svg {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/*worksエリア*/
+#works {
+    background-color: #99ccdd;
+    width: 100%;
+    height: 600px;
+    margin: 0;
+    padding: 20px 10px 30px 10px;
+}
+@media (max-width:480px){
+    #works{
+        height: 1000px;
+    }
+}
+/*見出しデザイン*/
+#works h2 {
+    border-left: 5px solid #fff;
+    color: #fff;
+    padding-left: 5px;
+}
+.work-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*作品を追加するときは、worksクラスを付けること。*/
+.works {
+    text-align: center;
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+}
+.works h3 {
+    font-size: 25px;
+    color: #333;
+}
+.works a {
+    text-decoration: none;
+}
+.works svg {
+    margin-left: 5px;
+    font-size: 10px;
+}
+.img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    border: 2px dashed #99ccdd;
+    /*左に少しずれているので修正*/
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.works img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.works p {
+    text-align: justify;
+    font-family: 'Kosugi', sans-serif;
+    font-size: 15px;
+}
+.works .skill {
+    margin-bottom: 10px;
+}
+.works .read-last {
+    margin: 0;
+}
+/*各workの編集*/
+
+@media (min-width: 760px){
+    #works {
+        text-align: center; 
+    }
+    #works h2 {
+        border: none;
+        font-size: 50px;
+    }
+}
+
+/*contactエリア*/
+#contact {
+    margin: 0;
+    padding: 30px 10px;
+}
+/*見出しデザイン*/
+#contact h2 {
+    border-left: 5px solid #333;
+    padding-left: 5px;
+}
+#contact p {
+    font-size: 20px;
+    font-family: 'Kosugi', sans-serif;
+    padding: 20px;
+}
+/*フォームデザイン*/
+.form-group {
+    font-family: 'Kosugi', sans-serif;
+    padding: 20px;
+}
+.form-group label {
+    padding-top: 8px;
+}
+.form-group input {
+    border-radius: 0.125rem;
+    border-color: #99ccdd;
+}
+.form-group textarea {
+    border-radius: 0.125rem;
+    border-color: #99ccdd;
+}
+.form-group button {
+    border-radius: 0.125rem;
+    border-color: #6a8d99;
+    margin-top: 15px;
+    color: #fff;
+    background-color: #99ccdd;
+}
+.form-group button:hover {
+    color: #99ccdd;
+    background-color: #fff;
+}
+/*送信後の表示*/
+#thxMessage {
+    height: 500px;
+    margin: 0;
+    padding: 30px 10px;
+}
+#thxMessage h2 {
+    border-left: 5px solid #333;
+    padding-left: 5px;
+}
+#thxMessage p {
+    font-size: 20px;
+    font-family: 'Kosugi', sans-serif;
+    padding: 20px;
+}
+
+@media (min-width: 760px){
+    #contact {
+        text-align: center; 
+    }
+    #contact h2 {
+        border: none;
+        font-size: 50px;
+    }
+    #thxMessage {
+        text-align: center;
+    }
+    #thxMessage h2 {
+        border: none;
+        font-size: 50px;
+}
+}
+
+/*フッター*/
+.footer {
+    background-color: #343a40;
+    width: 100%;
+    height: 30px;
+}
+footer small {
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    color: #fff;
+}
